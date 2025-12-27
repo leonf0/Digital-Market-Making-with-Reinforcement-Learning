@@ -220,7 +220,7 @@ The Deep-Q-Learning Agent achieved a mean PNL of $56.67 with a standard deviatio
 It also significantly outperformed the naive market maker with 32% higher PNL with 94% less variance.
 
 <p align="center">
-  <img src="assets/dqn_skew_and_inventory_correlation.png.png" alt="" width="80%"/>
+  <img src="assets/dqn_skew_and_inventory_correlation.png" alt="" width="80%"/>
 </p>
 
 This example of a single demonstration shows how the Deep Q-Learning agent adapts its skew to manage inventory. What is interesting about this is that the Deep Q-Learning agent seems to be more precise in its skew adjustments compared to the other RL agents.
