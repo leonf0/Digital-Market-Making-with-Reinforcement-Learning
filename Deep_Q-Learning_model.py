@@ -503,14 +503,12 @@ def main():
     batch_size = 128
 
     print("Training DQN agent...")
-    print("-" * 40)
 
     episode_rewards = train_dqn(
         model, env, agent, config, replay_buffer, optimizer, criterion,
         n_episodes=n_episodes, warmup=warmup, batch_size=batch_size
     )
 
-    print("-" * 40)
     print("Training complete!")
 
     print("Evaluating DQN agent...")
