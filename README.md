@@ -185,6 +185,14 @@ The PPO Agent achieved a mean PNL of $67.30 with a standard deviation of 72.24, 
 
 We see the PPO agent significantly outperform the Naive market maker with a 21.5% higher PNL and a 95% reduction in variance.
 
+<p align="center">
+  <img src="assets/PPO_inventory_and_skew_comparison.png" alt="PPO Training Results" width="80%"/>
+</p>
+
+This example of a single simulation shows how the PPO agent adjusts the skew to maintain robust, mean-reverting inventory control.
+
+## 2. Policy Gradient Agent
+
 
 
 
