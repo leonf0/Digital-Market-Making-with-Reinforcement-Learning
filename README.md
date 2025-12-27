@@ -130,8 +130,8 @@ Imposes an episode-level objective without interfering with intermediate learnin
 
 The relative scaling of $\alpha$, $\beta$, $\lambda$ determines the **Pareto frontier** of risk-return trade-offs. This project demonstrates that different RL algorithms require different scalings:
 
-- **Policy Gradients:** High $\beta$ (immediate inventory penalty) establishes a strong gradient signal early in training
-- **PPO:** Moderate $\beta$ with emphasis on $C$ (correction reward) leverages trajectory credit assignment
+- **Policy Gradients:** High $\lambda$ (immediate inventory penalty) establishes a strong gradient signal early in training
+- **PPO:** Moderate $\lambda$ with emphasis on $C$ (correction reward) leverages trajectory credit assignment
 - **DQN:** Dominant early inventory penalty helps accurate Q-value bootstrapping for risky states
 
 This algorithm-specific reward tuning reflects deep understanding of each method's learning dynamics—not just empirical trial-and-error.
