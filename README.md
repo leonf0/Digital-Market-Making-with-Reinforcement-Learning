@@ -175,6 +175,16 @@ The RL agents learn this principle **implicitly** through reward optimization, w
 
 ## 1. PPO Agent
 
+<p align="center">
+  <img src="assets/ppo_training_results.png" alt="PPO Training Results" width="80%"/>
+</p>
+
+The left panel shows that the PPO agent successfully learned a market making policy. The training stabilized around episode 150-200, the high initial variance represents the exploration phase where the agent tested various strategies, including some that led to extreme penalty.
+
+The PPO Agent achieved a mean PNL of $67.30 with a standard deviation of 72.24, the PNL is similar to the agent using the Avellaneda-Stoikov model but with a reduced variance (-23%) demonstrating that the PPO agent's inventory control outperforms the Avellaneda-Stoikov model.
+
+We see the PPO agent significantly outperform the Naive market maker with a 21.5% higher PNL and a 95% reduction in variance.
+
 
 
 
