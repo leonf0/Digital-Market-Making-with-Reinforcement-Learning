@@ -193,7 +193,13 @@ This example of a single simulation shows how the PPO agent adjusts the skew to 
 
 ## 2. Policy Gradient Agent
 
+<p align="center">
+  <img src="assets/policy_gradient_training_and_performance.png" alt="PPO Training Results" width="80%"/>
+</p>
 
+The left panel shows that the Policy Gradient agent also successfully learned a market making policy. The training stabilized around episode 100, the high initial variance represents the exploration phase where the agent tested various strategies, including some that led to extreme penalty.
+
+The Policy Gradient Agent achieved a mean PNL of $68.42 with a standard deviation of 72.06, significantly outperforming the agent using the Avellaneda-Stoikov model with a 57% higher PNL and 35% less various. It also significantly outperformed the agent using a naive spread, with a 66% higher PNL and 96% less variance.
 
 
 
