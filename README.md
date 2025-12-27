@@ -134,7 +134,7 @@ The relative scaling of $\alpha$, $\beta$, $\lambda$ determines the **Pareto fro
 - **PPO:** Moderate $\lambda$ with emphasis on $C$ (correction reward) leverages trajectory credit assignment
 - **DQN:** Dominant early inventory penalty helps accurate Q-value bootstrapping for risky states
 
-This algorithm-specific reward tuning reflects deep understanding of each method's learning dynamics—not just empirical trial-and-error.
+This algorithm-specific reward tuning reflects deep understanding of each method's learning dynamics, not just empirical trial-and-error.
 
 ## 2. The Market Making Problem as a Stochastic Control Framework
 
