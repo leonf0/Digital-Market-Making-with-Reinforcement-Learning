@@ -175,7 +175,6 @@ The RL agents learn this principle **implicitly** through reward optimization, w
 
 ## 1. PPO Agent
 
-# Market Making with Reinforcement Learning
 
 
 
