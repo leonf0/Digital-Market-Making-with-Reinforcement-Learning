@@ -124,7 +124,7 @@ Directly rewards inventory reduction, aligning with PPO's trajectory-based learn
 **Terminal Liquidation Penalty ($T$):**
 $$T = \lambda q_T^2$$
 
-Imposes an episode-level objective without interfering with intermediate learning. The quadratic form ensures that the penalty is always positive and that large positions are exponentially penalized—a $q_T = 10$ position incurs 100× the penalty of $q_T = 1$.
+Imposes an episode-level objective without interfering with intermediate learning. The quadratic form ensures that the penalty is always positive and that large positions are exponentially penalized, a $q_T = 10$ position incurs 100× the penalty of $q_T = 1$.
 
 ### 2.3 Reward Scaling and Multi-Objective Balance
 
