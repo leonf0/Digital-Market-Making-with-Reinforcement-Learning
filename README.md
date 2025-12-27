@@ -112,7 +112,7 @@ A failure occurs when agents optimize **pure PnL rewards** in stochastic environ
 This project implements a **reward decomposition** that explicitly shapes the desired behavior:
 
 **Edge Capture Component ($E$):**
-$$E = \alpha[(S - b) \cdot \mathbb{1}_{\text{bid filled}} + (a - S) \cdot \mathbb{1}_{\text{ask filled}}]$$
+$$E = \alpha[(\text{fair price - bid}) + (\text{ask - fair price})]$$
 
 This rewards profitable spread capture while remaining indifferent to directional price movement. The agent learns spread optimization without following market drift, creating a robust market-neutral strategy.
 
@@ -201,6 +201,11 @@ The left panel shows that the Policy Gradient agent also successfully learned a 
 
 The Policy Gradient Agent achieved a mean PNL of $68.42 with a standard deviation of 72.06, significantly outperforming the agent using the Avellaneda-Stoikov model with a 57% higher PNL and 35% less various. It also significantly outperformed the agent using a naive spread, with a 66% higher PNL and 96% less variance.
 
+<p align="center">
+  <img src="assets/policy_gradient_pnl_and_inventory_comparison.png" alt="PPO Training Results" width="80%"/>
+</p>
+
+This example of a single simulation demonstrates how the Policy Gradient agents robust inventory control lead to a higher PNL with reduced variance in comparison to the agent using Avellaneda-Stoikov approximation.
 
 
 
