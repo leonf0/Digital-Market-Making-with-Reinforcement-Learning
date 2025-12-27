@@ -67,7 +67,7 @@ $$\nabla_\theta J(\theta) = \mathbb{E}_{\tau \sim \pi_\theta}\left[\sum_{t=0}^T 
 
 where $G_t = \sum_{k=t}^T \gamma^{k-t} r_k$ is the **return-to-go**. The key insight here is the **log-likelihood ratio trick**: we sample trajectories and increase the probability of actions that led to high returns.
 
-**Critical Challenge—High Variance:** The Monte Carlo estimate of $G_t$ suffers from severe variance due to stochastic fill dynamics. This project implements **baseline subtraction** using a learned value function $V_\phi(s_t)$ to compute advantages:
+**Critical Challenge, High Variance:** The Monte Carlo estimate of $G_t$ suffers from severe variance due to stochastic fill dynamics. This project implements **baseline subtraction** using a learned value function $V_\phi(s_t)$ to compute advantages:
 
 $$A_t = G_t - V_\phi(s_t)$$
 
