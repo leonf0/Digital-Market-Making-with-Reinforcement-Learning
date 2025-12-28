@@ -71,7 +71,7 @@ where $G_t = \sum_{k=t}^T \gamma^{k-t} r_k$ is the **return-to-go**. The key ins
 
 $$A_t = G_t - V_\phi(s_t)$$
 
-This variance reduction technique is essential—raw returns in market making are dominated by noise from random fills and price movements, making gradient estimates unreliable without variance control.
+This variance reduction technique is essential, raw returns in market making are dominated by noise from random fills and price movements, making gradient estimates unreliable without variance control.
 
 ### 1.2 Proximal Policy Optimization: Constrained Policy Updates
 
@@ -98,8 +98,6 @@ DQN employs two major techniques for stabilization:
 2. **Target Networks:** Uses a slowly-updating target network $Q_{\theta^-}$ to compute TD targets, preventing the moving target problem:
 
 $$\mathcal{L}(\theta) = \mathbb{E}_{(s,a,r,s') \sim \mathcal{D}}\left[\left(r + \gamma \max_{a'} Q_{\theta^-}(s', a') - Q_\theta(s, a)\right)^2\right]$$
-
-**DQN's Limitation in Continuous Action Spaces:** While effective for discrete spread/skew combinations, DQN struggles with the naturally continuous nature of quote placement. This motivates policy gradient methods which directly parameterize continuous actions.
 
 ## 2. Reward Engineering
 
