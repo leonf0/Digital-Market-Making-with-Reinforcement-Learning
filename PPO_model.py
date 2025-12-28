@@ -510,11 +510,11 @@ def plot_single_episode(model, env, rl_agent, as_agent, config):
     axes[0, 0].set_title('Price Evolution')
     axes[0, 0].grid(True, alpha=0.3)
 
-    axes[0, 1].plot(range(steps), rl_spreads, label='PPO Agent', color='steelblue')
-    axes[0, 1].plot(range(steps), as_spreads, label='Avellaneda-Stoikov', color='orange')
-    axes[0, 1].set_xlabel('Step')
-    axes[0, 1].set_ylabel('Spread')
-    axes[0, 1].set_title('Spread Comparison')
+    axes[0, 1].scatter(rl_inventories, rl_skews, alpha=0.5, s=10, label='PPO Agent', color='steelblue')
+    axes[0, 1].scatter(as_inventories, as_skews, alpha=0.5, s=10, label='Avellaneda-Stoikov', color='orange')
+    axes[0, 1].set_xlabel('Inventory')
+    axes[0, 1].set_ylabel('Skew')
+    axes[0, 1].set_title('Inventory vs Skew (should be negatively correlated)')
     axes[0, 1].legend()
     axes[0, 1].grid(True, alpha=0.3)
 
