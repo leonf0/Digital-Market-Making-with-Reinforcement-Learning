@@ -545,14 +545,6 @@ def plot_single_episode(model, env, rl_agent, as_agent, config):
     axes[2, 0].legend()
     axes[2, 0].grid(True, alpha=0.3)
 
-    axes[2, 1].scatter(rl_inventories, rl_skews, alpha=0.5, s=10, label='PPO Agent', color='steelblue')
-    axes[2, 1].scatter(as_inventories, as_skews, alpha=0.5, s=10, label='Avellaneda-Stoikov', color='orange')
-    axes[2, 1].set_xlabel('Inventory')
-    axes[2, 1].set_ylabel('Skew')
-    axes[2, 1].set_title('Inventory vs Skew (should be negatively correlated)')
-    axes[2, 1].legend()
-    axes[2, 1].grid(True, alpha=0.3)
-
     plt.tight_layout()
     plt.savefig('ppo_episode_detail.png', dpi=150)
     plt.show()
