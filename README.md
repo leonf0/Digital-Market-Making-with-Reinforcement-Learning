@@ -179,7 +179,7 @@ The RL agents learn this principle **implicitly** through reward optimization, w
 
 The left panel shows that the PPO agent successfully learned a market making policy. The training stabilized around episode 150-200, the high initial variance represents the exploration phase where the agent tested various strategies, including some that led to extreme penalty.
 
-The PPO Agent achieved a mean PNL of $67.30 with a standard deviation of 72.24, the PNL is similar to the agent using the Avellaneda-Stoikov model but with a reduced variance (-23%) demonstrating that the PPO agent's inventory control outperforms the Avellaneda-Stoikov model.
+The PPO Agent achieved a mean PNL of $67.30 with a standard deviation of 72.24 across the 100 simulations, the PNL is similar to the agent using the Avellaneda-Stoikov model but with a reduced variance (-23%) demonstrating that the PPO agent's inventory control outperforms the Avellaneda-Stoikov model.
 
 We see the PPO agent significantly outperform the Naive market maker with a 21.5% higher PNL and a 95% reduction in variance.
 
@@ -197,7 +197,7 @@ This example of a single simulation shows how the PPO agent adjusts the skew to 
 
 The left panel shows that the Policy Gradient agent also successfully learned a market making policy. The training stabilized around episode 100, the high initial variance represents the exploration phase where the agent tested various strategies, including some that led to extreme penalty.
 
-The Policy Gradient Agent achieved a mean PNL of $68.42 with a standard deviation of 72.06, significantly outperforming the agent using the Avellaneda-Stoikov model with a 57% higher PNL and 35% less variance. It also significantly outperformed the agent using a naive spread, with a 66% higher PNL and 96% less variance.
+The Policy Gradient Agent achieved a mean PNL of $68.42 with a standard deviation of 72.06 across the 100 simulations, significantly outperforming the agent using the Avellaneda-Stoikov model with a 57% higher PNL and 35% less variance. It also significantly outperformed the agent using a naive spread, with a 66% higher PNL and 96% less variance.
 
 <p align="center">
   <img src="assets/policy_gradient_pnl_and_inventory_comparison.png" alt="" width="80%"/>
@@ -213,7 +213,7 @@ This example of a single simulation demonstrates how the Policy Gradient agents 
 
 The left panel shows that the Deep Q-Learning agent also successfully learned a market making policy, however it require significantly longer for the training to stabalise. The training stabilized around episode 7000, with extreme variance over this period.
 
-The Deep-Q-Learning Agent achieved a mean PNL of $56.67 with a standard deviation of 72.79. Although on a pure PNL basis it was outperformed by the agent using the Avellenada-Stoikov model by 11%, it achieved its profit with 33% less variance, demonstrating strong inventory control but slightly weaker edge capture.
+The Deep-Q-Learning Agent achieved a mean PNL of $56.67 with a standard deviation of 72.79 across the 100 simulations. Although on a pure PNL basis it was outperformed by the agent using the Avellenada-Stoikov model by 11%, it achieved its profit with 33% less variance, demonstrating strong inventory control but slightly weaker edge capture.
 
 It also significantly outperformed the naive market maker with 32% higher PNL with 94% less variance.
 
