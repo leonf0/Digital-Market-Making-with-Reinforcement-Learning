@@ -134,7 +134,7 @@ The relative scaling of $\alpha$, $\beta$, $\lambda$ determines the **Pareto fro
 
 This algorithm-specific reward tuning reflects deep understanding of each method's learning dynamics, not just empirical trial-and-error.
 
-## 2. The Market Making Problem as a Stochastic Control Framework
+## 3. The Market Making Problem as a Stochastic Control Framework
 
 Market making fundamentally presents a **continuous-time stochastic optimal control problem** where the agent must optimize two objectives: profit maximization through spread capture and inventory risk minimization. The value function $V(t, S_t, q_t)$ represents the expected terminal wealth given current time $t$, mid-price $S_t$, and inventory position $q_t$.
 
@@ -144,7 +144,7 @@ $$ \frac{\partial V}{\partial t} + \sup_{\delta^a,\delta^b} \Bigl( \lambda^a(\de
 
 This PDE captures the problem: the agent must choose bid and ask spreads ($\delta^b$, $\delta^a$) to maximize the expected value, accounting for stochastic fill rates $\lambda(\delta) = Ae^{-k\delta}$ and Brownian price dynamics $dS_t = \sigma dW_t$.
 
-## 3. Avellaneda-Stoikov: Closed-Form Approximation via Asymptotic Analysis
+## 4. Avellaneda-Stoikov: Closed-Form Approximation via Asymptotic Analysis
 
 The Avellaneda-Stoikov model provides an **analytically tractable approximation** by assuming exponential utility $U(x) = -e^{-\gamma x}$ with risk aversion parameter $\gamma$. Through asymptotic expansion as $\gamma \to 0$, the optimal quotes decompose into:
 
@@ -221,6 +221,7 @@ Running 100 simulations per agent represents a **computational investment** that
 - **N = 1000 simulations**: Highest precision ($\pm 3\%$ standard error) but 10× runtime
 
 This project uses N = 100 as the optimal balance for producing high quality results while maintaining reasonable evaluation times. The Central Limit Theorem ensures that with 100 samples, the distribution of mean PnL is approximately normal regardless of the underlying PnL distribution, validating parametric statistical tests.
+
 # Simulation Results
 
 ## 1. PPO Agent
