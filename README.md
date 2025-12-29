@@ -169,6 +169,58 @@ Across all approaches, both analytical (Avellaneda-Stoikov) and learned (RL), th
 
 The RL agents learn this principle **implicitly** through reward optimization, while AS derives it **explicitly** from stochastic control theory. This convergence validates both approaches: when properly designed, learned policies approximate theoretically optimal strategies, while theoretical models guide reward engineering and architectural choices in deep RL systems.
 
+## 6. Monte Carlo Validation: Statistical Robustness Through Repeated Trials
+
+### 6.1 The Necessity of Ensemble Testing
+
+A single training run or evaluation episode provides insufficient evidence of an RL agent's true performance in stochastic environments. Market making strategies face two sources of randomness:
+
+1. **Price path variability**: Geometric Brownian Motion generates infinite possible trajectories
+2. **Order flow stochasticity**: Poisson arrival processes create random fill timing even for identical quote placements
+
+An agent might achieve high PnL in a single episode simply by encountering favorable price drift, or suffer losses despite sound strategy due to unlucky fill timing. **Monte Carlo simulation** addresses this by averaging performance across many independent episodes, allowing us to distinguish skill from luck.
+
+### 6.2 Statistical Framework
+
+This project evaluates each agent (RL-trained, Avellaneda-Stoikov, Naive) across **100 independent simulations**, each with different random seeds for both price evolution and order arrivals. For each agent, we compute:
+
+**Mean Performance ($\bar{\pi}$):**
+```math
+\bar{\pi} = \frac{1}{N} \sum_{i=1}^{N} \pi_i
+```
+
+where $\pi_i$ is the terminal PnL from simulation $i$ and $N = 100$.
+
+**Variance ($\sigma^{2}_{\pi}$):**
+```math
+\sigma^{2}_{\pi} = \frac{1}{N-1} \sum_{i=1}^{N} (\pi_i - \bar{\pi})^{2}
+```
+
+### 6.3 Detecting Overfitting vs. Genuine Learning
+
+Monte Carlo testing reveals whether RL agents learned robust strategies or merely overfitted to training episodes:
+
+**Overfitted agents exhibit:**
+- High variance ($\sigma_{\pi}$) across simulations
+- Performance highly sensitive to initial price or random seed
+- Significantly worse performance than training episodes
+
+**Robustly trained agents exhibit:**
+- Variance comparable to or lower than Avellaneda-Stoikov
+- Consistent performance across diverse market conditions
+- Mean performance matching or exceeding theoretical benchmarks
+
+The 100-simulation ensemble effectively stress-tests each strategy against the full distribution of possible market realizations, ensuring reported results reflect genuine strategic superiority rather than statistical artifacts.
+
+### 6.4 Computational Considerations
+
+Running 100 simulations per agent represents a **computational investment** that trades off accuracy for runtime:
+
+- **N = 10 simulations**: Fast but high sampling error ($\pm 32\%$ standard error)
+- **N = 100 simulations**: Balanced ($\pm 10\%$ standard error)
+- **N = 1000 simulations**: Highest precision ($\pm 3\%$ standard error) but 10× runtime
+
+This project uses N = 100 as the optimal balance for producing high quality results while maintaining reasonable evaluation times. The Central Limit Theorem ensures that with 100 samples, the distribution of mean PnL is approximately normal regardless of the underlying PnL distribution, validating parametric statistical tests.
 # Simulation Results
 
 ## 1. PPO Agent
