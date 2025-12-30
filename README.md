@@ -12,7 +12,7 @@ The simulation models asset prices using **Geometric Brownian Motion** and order
 
 ### 1. Market Simulation
 The simulation creates a realistic closed-loop laboratory:
-* **Price Dynamics:** Generates random prices using a drift-less random walk ($dS_t = \sigma dW_t$).
+* **Price Dynamics:** Generates random prices using a drift-less random walk ($dS_t = \sigma S_t dW_t$).
 * **Order Flow:** Simulates the "Crowd" using Poisson arrival intensities.
 * **Fill Probability:** Uses an exponential decay function where the probability of a fill decreases as the spread widens:
     $$P(fill) = A \cdot e^{-k \cdot \delta}$$
