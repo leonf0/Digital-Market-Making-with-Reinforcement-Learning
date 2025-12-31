@@ -1,5 +1,5 @@
 from src.MarketEnv import MarketEnv and MarketConfig
-from src.MarketMaking import MarketMaker
+from src.MarketMaking import MarketMaker, NaiveMarketMaker and AvellenedaStoikov
 import numpy as np
 import torch
 import torch.nn as nn
