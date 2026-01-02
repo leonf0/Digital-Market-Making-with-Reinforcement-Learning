@@ -230,7 +230,6 @@ def ppo_update(model, optimizer, states, spread_actions, skew_actions, old_log_p
 
 def train_ppo(model, env, agent, config, optimizer, n_episodes=500,
               gamma=0.99, lam=0.95, clip_epsilon=0.2, n_epochs=4, batch_size=64):
-    """Train policy using PPO algorithm"""
     episode_rewards = []
 
     for episode in range(n_episodes):
