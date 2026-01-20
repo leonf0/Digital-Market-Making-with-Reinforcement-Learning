@@ -279,7 +279,7 @@ This example of a single demonstration shows how the Deep Q-Learning agent adapt
 # Summary
 All three different RL algorithms (PPO, Policy Gradient, and Deep Q-Learning) were succesfully trained to solve the market making problem, with all agents learning effective inventory control strategies. The Policy Gradient agent and the PPO agent achieved the best overall performanc in the experiment, when considering both PNL and variance. 
 
-Deep Q-Learning required significantly longer training (~7000 episodes vs ~150-200) but demonstrated the most precise skew adjustments and strong risk management despite a lower PnL. This reduced PNL is likely due to the fact that it struggles with the naturally continuous nature of quote placement.
+Deep Q-Learning required significantly longer training (~7000 episodes vs ~150-200) but demonstrated the most precise skew adjustments and strong risk management despite a lower PnL. This weaker performance is likely due to the fact that DQN learns the reward function as opposed to a policy, which can be unstable with a stochastic reward policy.
 
 All RL agents dramatically outperformed the naive market maker, achieving 21-66% higher PnL with 94-96% variance reduction. These results validate the hypothesis that properly designed reward functions allow RL agents to learn and exceed theoretically optimal strategies, with each algorithm exhibiting distinct trade-offs between training efficiency, PnL generation, and risk control.
 
